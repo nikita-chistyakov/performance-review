@@ -1,20 +1,64 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Performance Review Form
 
-# Run and deploy your AI Studio app
+A modern, AI-powered performance review form designed specifically for CTOs to evaluate ML Engineer Interns (or any engineering role). This tool streamlines the review process by allowing managers to input raw, honest notes and automatically polishing them into a professional, structured evaluation ready for printing.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/1f1e84e2-9594-418b-b296-e1b83956f9b0
+- **Structured Competency Ratings**: Evaluate interns across 5 key engineering competencies (Understanding Code, Observability, Presentation, Feature Development, Initiative & Learning).
+- **Customizable Categories**: Easily edit category names and descriptions to fit specific roles or expectations.
+- **Raw Feedback to Polished Review**: Write raw "Keep Doing", "Stop Doing", and "Start Doing" notes. The built-in AI automatically restructures and polishes them into a professional tone.
+- **Skill Radar Visualization**: Automatically generates a radar chart and rating breakdown based on your scores.
+- **Print-Ready Output**: Generates a clean, professional HTML document ready to be printed or saved as a PDF.
+- **Auto-Save**: All progress is automatically saved to your browser's local storage so you never lose your work.
+- **Self-Contained AI**: Uses the Gemini API to handle all feedback polishing behind the scenes—no manual API key configuration required by the user.
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **Framework**: React 19 + Vite
+- **Styling**: Tailwind CSS (inline styles for print compatibility)
+- **Charts**: Recharts (Radar Chart)
+- **AI Integration**: `@google/genai` (Gemini 3.1 Pro)
 
+## Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/performance-review-form.git
+   cd performance-review-form
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up your environment variables:
+   Create a `.env` file in the root directory and add your Gemini API key:
+   ```env
+   GEMINI_API_KEY="your_gemini_api_key_here"
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000` (or the port specified by Vite).
+
+## Usage
+
+1. **Welcome Tab**: Enter your name (CTO) and the Intern's name.
+2. **Ratings Tab**: Rate the intern from 1 to 5 across the predefined competencies. Click on any competency title or description to customize it.
+3. **Feedback Tab**: Write raw, bullet-point notes on what the intern should Keep, Stop, and Start doing. Add an optional overall note for context.
+4. **Preview & Print Tab**: Review the generated radar chart and rating breakdown. Click "Generate AI Evaluation" to have Gemini polish your raw notes. Once satisfied, click "Print Full Evaluation" to generate a print-ready document.
+
+## License
+
+This project is licensed under the Apache 2.0 License.
