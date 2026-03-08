@@ -432,11 +432,9 @@ export default function App() {
         <div style={{ background:"linear-gradient(135deg,#1a237e,#283593)", borderRadius:16, padding:"26px 30px", marginBottom:20, color:"#fff", display:"flex", justifyContent:"space-between", alignItems:"center" }}>
           <div>
             <div style={{ fontSize:11, letterSpacing:3, opacity:.7, marginBottom:4 }}>CTO REVIEW · ML ENGINEER INTERN · 2 MONTHS</div>
-            <h1 style={{ margin:"0 0 4px", fontSize:26, fontWeight:800 }}>Performance Review</h1>
-            <p style={{ margin:0, fontSize:13, opacity:.85 }}>Rate · Give structured feedback · AI-polishes · Print</p>
+            <h1 style={{ margin:0, fontSize:26, fontWeight:800 }}>Performance Review</h1>
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
-            {isLoaded && <div style={{ fontSize: 11, background:"rgba(255,255,255,0.15)", padding: "4px 10px", borderRadius: 12 }}>💾 Auto-saved</div>}
             <button onClick={handleReset} style={{ background: confirmReset ? "#d32f2f" : "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff", padding: "6px 12px", borderRadius: 12, fontSize: 11, cursor: "pointer", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background=confirmReset ? "#b71c1c" : "rgba(255,255,255,0.2)"} onMouseLeave={e => e.currentTarget.style.background=confirmReset ? "#d32f2f" : "rgba(255,255,255,0.1)"}>
               {confirmReset ? "⚠️ Click again to confirm" : "🔄 Start New Review"}
             </button>
