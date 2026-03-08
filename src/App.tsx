@@ -210,6 +210,7 @@ export default function App() {
   const [aiResult, setAiResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const[error, setError] = useState<string | null>(null);
+  const [confirmReset, setConfirmReset] = useState(false);
 
   // 1. LOCAL STORAGE: Load on Mount
   useEffect(() => {
@@ -261,6 +262,26 @@ export default function App() {
       setError(e.message || "Generation failed. Please try again."); 
     }
     finally { setLoading(false); }
+  };
+
+  const handleReset = () => {
+    if (!confirmReset) {
+      setConfirmReset(true);
+      setTimeout(() => setConfirmReset(false), 3000);
+      return;
+    }
+    localStorage.removeItem("ml_intern_review");
+    setCtoName("");
+    setInternName("");
+    setCompetencies(DEFAULT_COMPETENCIES.map(c => ({...c})));
+    setRatings(Array(5).fill(0));
+    setKeep(["","",""]);
+    setStop(["","",""]);
+    setStart(["","",""]);
+    setOverallNote("");
+    setAiResult(null);
+    setTab("intro");
+    setConfirmReset(false);
   };
 
   const handlePrint = () => {
@@ -414,7 +435,12 @@ export default function App() {
             <h1 style={{ margin:"0 0 4px", fontSize:26, fontWeight:800 }}>Performance Review</h1>
             <p style={{ margin:0, fontSize:13, opacity:.85 }}>Rate · Give structured feedback · AI-polishes · Print</p>
           </div>
-          {isLoaded && <div style={{ fontSize: 11, background:"rgba(255,255,255,0.15)", padding: "4px 10px", borderRadius: 12 }}>💾 Auto-saved</div>}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
+            {isLoaded && <div style={{ fontSize: 11, background:"rgba(255,255,255,0.15)", padding: "4px 10px", borderRadius: 12 }}>💾 Auto-saved</div>}
+            <button onClick={handleReset} style={{ background: confirmReset ? "#d32f2f" : "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff", padding: "6px 12px", borderRadius: 12, fontSize: 11, cursor: "pointer", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background=confirmReset ? "#b71c1c" : "rgba(255,255,255,0.2)"} onMouseLeave={e => e.currentTarget.style.background=confirmReset ? "#d32f2f" : "rgba(255,255,255,0.1)"}>
+              {confirmReset ? "⚠️ Click again to confirm" : "🔄 Start New Review"}
+            </button>
+          </div>
         </div>
 
         <div style={{ display:"flex", flexWrap:"wrap", gap:8, marginBottom:20 }}>
