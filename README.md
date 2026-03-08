@@ -2,6 +2,11 @@
 
 A modern, AI-powered performance review form designed specifically for CTOs to evaluate ML Engineer Interns (or any engineering role). This tool streamlines the review process by allowing managers to input raw, honest notes and automatically polishing them into a professional, structured evaluation ready for printing.
 
+**[🚀 View Live Preview](https://ais-pre-skcdx5nzlrhvghtupofaew-276322185514.europe-west2.run.app)**
+
+*(Optional: Add a screenshot of your app here)*
+`![App Preview](https://picsum.photos/seed/performancereview/800/450)`
+
 ## Features
 
 - **Structured Competency Ratings**: Evaluate interns across 5 key engineering competencies (Understanding Code, Observability, Presentation, Feature Development, Initiative & Learning).
