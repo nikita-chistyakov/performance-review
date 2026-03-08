@@ -4,9 +4,6 @@ A modern, AI-powered performance review form designed specifically for CTOs to e
 
 **[🚀 View Live Preview](https://ais-pre-skcdx5nzlrhvghtupofaew-276322185514.europe-west2.run.app)**
 
-*(Optional: Add a screenshot of your app here)*
-`![App Preview](https://picsum.photos/seed/performancereview/800/450)`
-
 ## Features
 
 - **Structured Competency Ratings**: Evaluate interns across 5 key engineering competencies (Understanding Code, Observability, Presentation, Feature Development, Initiative & Learning).
